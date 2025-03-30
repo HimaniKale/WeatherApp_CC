@@ -1,0 +1,140 @@
+/* 🔹 Base Styles */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  animation: gradientMove 10s infinite alternate ease-in-out;
+  background: linear-gradient(45deg, #ff6f61, #ffcc00, #4caf50, #2196f3);
+  background-size: 300% 300%;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* 🌡️ Dynamic Backgrounds */
+.hot {
+  background: linear-gradient(to top,  #ff8c00, #ff44003b);
+}
+.warm {
+  background: linear-gradient(to top, #efb242, #f7fa338f);
+}
+.mild {
+  background: linear-gradient(to top, #4caf4fbf, #63dd1750);
+}
+.cold {
+  background: linear-gradient(to top, #2196f3, #4fc2f797);
+}
+.freezing {
+  background: linear-gradient(to top, #0b397d, #2e3ac49a);
+}
+
+/* 🌀 Glassmorphism Weather Box */
+.weather-box {
+  background: rgba(179, 90, 90, 0.429);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🎨 Input & Button */
+.input-field {
+  pointer-events: auto;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  margin-right: 10px;
+  outline: none;
+  font-size: 16px;
+}
+
+.weather-btn {
+  background-color: #333;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.weather-btn:hover {
+  background-color: #555;
+}
+
+/* 📌 Weather Info */
+.weather-info {
+  margin-top: 20px;
+  font-size: 18px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* 🔺 Weather Animations */
+#weather-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* 🌧️ Raindrop Animation */
+.raindrop {
+  width: 2px;
+  height: 10px;
+  background: white;
+  position: absolute;
+  animation: fall 1s linear infinite;
+}
+
+/* ❄️ Snowflake Animation */
+.snowflake {
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  animation: fall 3s linear infinite;
+}
+
+/* ☀️ Sun Animation */
+.sun-rays {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, yellow, orange);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+}
+
+/* 🔄 Keyframes */
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
